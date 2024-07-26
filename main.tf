@@ -11,6 +11,7 @@ terraform {
 
 provider "aws" {
   ##Below details are provided through environment variables##
+  ##If below properties are left empty, then terraform will look at environment variables##
   #region     = "<aws_region>"
   #access_key = "<access_id>"
   #secret_key = "<access_secret>"
