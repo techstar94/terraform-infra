@@ -31,7 +31,7 @@ resource "aws_instance" "workstation" {
   vpc_security_group_ids = var.sg
 
   tags = {
-    Name = "workstation01"
+    Name = "docker-server"
   }
 
   provisioner "remote-exec" {
