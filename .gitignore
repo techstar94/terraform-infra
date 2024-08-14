@@ -2,3 +2,4 @@
 terraform.*
 .terraform*
 id_workstations.pem
+aws-universal-key.pem

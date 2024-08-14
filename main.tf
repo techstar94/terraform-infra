@@ -20,14 +20,14 @@ provider "aws" {
 variable "sg" {
   description = "List of Security Group IDs"
   type        = list(string)
-  default     = ["sg-05016e5b1b76356b0"]
+  default     = ["sg-05e15ad64a78dc537"]
 }
 
 resource "aws_instance" "workstation" {
 
-  ami                    = "ami-0fe630eb857a6ec83"
+  ami                    = "ami-0583d8c7a9c35822c"
   instance_type          = "t2.micro"
-  key_name               = "id_workstations"
+  key_name               = "aws-universal-key"
   vpc_security_group_ids = var.sg
 
   tags = {
@@ -40,7 +40,7 @@ resource "aws_instance" "workstation" {
       type        = "ssh"
       user        = "ec2-user"
       host        = self.public_ip
-      private_key = file("${path.module}/id_workstations.pem")
+      private_key = file("${path.module}/aws-universal-key.pem")
     }
 
     inline = [
